@@ -1,0 +1,25 @@
+{
+  "name": "cloudguard",
+  "version": "1.0.0",
+  "description": "CloudGuard Alert Management System",
+  "main": "back/server.js",
+  "scripts": {
+    "start": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "node back/server.js",
+    "frontend": "http-server front -p 8080 -o",
+    "dev": "concurrently \"npm run dev-backend\" \"npm run dev-frontend\"",
+    "dev-backend": "nodemon back/server.js",
+    "dev-frontend": "http-server front -p 8080 -o"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "http-server": "^14.1.1",
+    "nodemon": "^3.0.1"
+  }
+}
