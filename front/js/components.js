@@ -39,30 +39,44 @@ const Components = {
 
     // Render alert card
     renderAlertCard(alert) {
-        const statusClass = alert.status.toLowerCase().replace('-', '-');
-        
+        const statusClass = String(alert.status)
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-+|-+$/g, '');
+
+        const severityClass = String(alert.severity)
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-+|-+$/g, '');
+
         return `
-            <div class="alert-card" data-alert-id="${alert.id}">
-                <div class="alert-header">
-                    <svg class="alert-icon status-${statusClass}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        ${this.getStatusIcon(alert.status)}
-                    </svg>
-                    <div class="alert-content">
-                        <div class="alert-badges">
-                            <span class="badge badge-severity-${alert.severity.toLowerCase()}">${alert.severity}</span>
-                            <span class="badge badge-category">${alert.category}</span>
-                            <span class="badge badge-status status-${statusClass}">${alert.status}</span>
-                        </div>
-                        <p class="alert-description">${alert.description}</p>
-                        <p class="alert-timestamp">Created: ${new Date(alert.createdAt).toLocaleString()}</p>
-                    </div>
-                </div>
-                <div class="alert-actions">
-                    ${this.renderAlertActions(alert)}
-                </div>
-            </div>
-        `;
-    },
+                <article class="alert-card alert-card--premium severity-${severityClass}" data-alert-id="${alert.id}">
+             <div class="alert-hero">
+              <div class="alert-hero-row">
+             <div class="chips">
+             <span class="chip chip-sev ${severityClass}">${alert.severity.toUpperCase()}</span>
+                <span class="chip chip-cat">${alert.category}</span>
+             <span class="chip chip-status status-${statusClass}">${alert.status}</span>
+             </div>
+
+             <svg class="alert-icon status-${statusClass}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              ${this.getStatusIcon(alert.status)}
+             </svg>
+             </div>
+
+             <h3 class="alert-title">${alert.description}</h3>
+             <p class="alert-meta">Created: ${new Date(alert.createdAt).toLocaleString()}</p>
+             </div>
+
+             <div class="alert-footer">
+             <div class="alert-actions premium-actions">
+          ${this.renderAlertActions(alert)}
+        </div>
+      </div>
+    </article>
+  `;
+},
+
 
     // Render action buttons based on status
     renderAlertActions(alert) {
