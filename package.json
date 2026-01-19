@@ -9,7 +9,9 @@
     "frontend": "http-server front -p 8080 -o",
     "dev": "concurrently \"npm run dev-backend\" \"npm run dev-frontend\"",
     "dev-backend": "nodemon back/server.js",
-    "dev-frontend": "http-server front -p 8080 -o"
+    "dev-frontend": "http-server front -p 8080 -o",
+      "test": "jest"
+
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -20,6 +22,7 @@
   "devDependencies": {
     "concurrently": "^8.2.2",
     "http-server": "^14.1.1",
+    "jest": "^30.2.0",
     "nodemon": "^3.0.1"
   }
 }

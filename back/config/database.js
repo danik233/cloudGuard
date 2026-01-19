@@ -9,6 +9,7 @@ class Database {
     console.log('Database: Using in-memory storage');
   }
 
+  
   async disconnect() {
     if (this.client) {
       await this.client.close();

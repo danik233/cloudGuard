@@ -12,7 +12,8 @@ class AuditLogManager {
     };
 
     this.logs.push(entry);
-
+  
+    
     if (this.logs.length > this.maxLogs) {
       this.logs.shift();
     }

@@ -22,6 +22,11 @@ app.get('/health', (req, res) => {
   });
 });
 
+// 404 HANDLER
+app.use((req, res) => {
+  res.status(404).json({ error: 'Route not found' });
+});
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error('Error:', err);

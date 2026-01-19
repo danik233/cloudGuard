@@ -11,7 +11,7 @@ class Alert {
     this.createdAt = data.createdAt || new Date().toISOString();
     this.updatedAt = data.updatedAt || new Date().toISOString();
   }
-
+  
   static get SEVERITIES() {
     return ['High', 'Medium', 'Low'];
   }
@@ -21,7 +21,7 @@ class Alert {
   }
 
   static get STATUSES() {
-    return ['New', 'Acknowledged', 'In-Progress', 'Resolved'];
+    return ['New', 'Acknowledged', 'In-Progress',  'Resolved'];
   }
 
   static get STATE_TRANSITIONS() {

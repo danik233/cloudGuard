@@ -20,9 +20,9 @@ body {
 
 /* Header */
 .header {
-    background-color: white;
-    border-bottom: 1px solid #e5e7eb;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: white; 
+    border-bottom: 1px solid #e5e7eb; 
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); 
 }
 
 .header-content {
@@ -101,6 +101,8 @@ body {
     background-color: #1d4ed8;
 }
 
+
+
 /* Notification */
 .notification {
     position: fixed;
@@ -172,14 +174,14 @@ body {
     margin-bottom: 0.5rem;
 }
 
-.filter-select {
-    padding: 0.625rem;
-    border: 1px solid #d1d5db;
-    border-radius: 0.5rem;
-    font-size: 0.875rem;
-    background-color: white;
-    cursor: pointer;
-    transition: border-color 0.2s;
+.filter-select { 
+    padding: 0.625rem; 
+    border: 1px solid #d1d5db; 
+    border-radius: 0.5rem; 
+    font-size: 0.875rem; 
+    background-color: white; 
+    cursor: pointer; 
+    transition: border-color 0.2s; 
 }
 
 .filter-select:focus {
@@ -188,9 +190,9 @@ body {
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
-/* Loading Spinner */
+/* Loading Spin*/
 .loading-spinner {
-    text-align: center;
+    text-align: center; 
     padding: 3rem 0;
 }
 
@@ -502,7 +504,7 @@ body {
 .chip-status.status-acknowledged { background: rgba(245,158,11,.20); }
 .chip-status.status-in-progress { background: rgba(59,130,246,.20); }
 .chip-status.status-resolved { background: rgba(16,185,129,.20); }
-
+   
 .alert-footer {
   padding: 14px 18px 18px;
   background: rgba(255,255,255,.75);
