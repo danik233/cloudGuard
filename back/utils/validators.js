@@ -4,6 +4,15 @@ class Validators {
   static validateFinding(finding) {
     const errors = [];
 
+    // Check if finding exists first
+    if (!finding) {
+      errors.push('Finding type is required');
+      return {
+        isValid: false,
+        errors
+      };
+    }
+
     if (!finding.type) {
       errors.push('Finding type is required');
     }
