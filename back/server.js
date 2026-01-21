@@ -2,6 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const alertRoutes = require('./routes/alertRoutes');
+const database = require('./config/database');
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -34,6 +36,10 @@ app.use((err, req, res, next) => {
     error: err.message || 'Internal server error' 
   });
 });
+
+
+database.connect();
+
 
 // Start server
 app.listen(PORT, () => {
