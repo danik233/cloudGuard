@@ -1,5 +1,5 @@
 // API Configuration
 const CONFIG = {
-    API_BASE_URL: 'http://localhost:3000/api',
-    NOTIFICATION_DURATION: 3000
+  API_BASE_URL: 'https://cloudguard-7dw4.onrender.com/api',
+  NOTIFICATION_DURATION: 3000
 };
